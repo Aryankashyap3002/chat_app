@@ -2,11 +2,12 @@ var socket = io();
 
 let btn = document.getElementById('btn');
 let inputMsg = document.getElementById('newmsg');
-let msgList = document.getElementById('maglist');
+let msgList = document.getElementById('msglist');
 
-btn.onClick = function exec() {
+btn.onclick = function exec() {
     socket.emit('msg_send', {
-        msg: inputMsg.value
+        msg: inputMsg.value,
+        roomid: roomIdInput.value
     })
 }
 
